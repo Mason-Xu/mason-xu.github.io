@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mason-xu.github.io/</id>
     <title>Ma5on的Blog</title>
-    <updated>2020-02-13T17:28:45.799Z</updated>
+    <updated>2020-02-25T10:16:35.528Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mason-xu.github.io/"/>
     <link rel="self" href="https://mason-xu.github.io/atom.xml"/>
@@ -11,19 +11,126 @@
     <icon>https://mason-xu.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Ma5on的Blog</rights>
     <entry>
+        <title type="html"><![CDATA[IDEA的常用快捷键]]></title>
+        <id>https://mason-xu.github.io/post/idea-de-chang-yong-kuai-jie-jian</id>
+        <link href="https://mason-xu.github.io/post/idea-de-chang-yong-kuai-jie-jian">
+        </link>
+        <updated>2020-02-25T09:49:45.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="查找相关快捷键">查找相关快捷键</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>对应操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>双击shift</td>
+<td>在项目的所有目录查找，就是你想看到你不想看到的和你没想过你能看到的都给你找出来</td>
+</tr>
+<tr>
+<td>ctrl+f</td>
+<td>当前文件查找特定内容</td>
+</tr>
+<tr>
+<td>ctrl+shift+f</td>
+<td>当前项目查找包含特定内容的文件</td>
+</tr>
+<tr>
+<td>ctrl+n</td>
+<td>查找类</td>
+</tr>
+<tr>
+<td>ctrl+shift+n</td>
+<td>查找文件</td>
+</tr>
+<tr>
+<td>ctrl+e</td>
+<td>最近的文件</td>
+</tr>
+<tr>
+<td>alt+F7</td>
+<td>非常非常频繁使用的一个快捷键，可以帮你找到你的函数或者变量或者类的所有引用到的地方</td>
+</tr>
+</tbody>
+</table>
+<h2 id="编辑相关快捷键">编辑相关快捷键</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>对应操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shift+enter</td>
+<td>另起一行</td>
+</tr>
+<tr>
+<td>ctrl+r</td>
+<td>当前文件替换特定内容</td>
+</tr>
+<tr>
+<td>shift+F6</td>
+<td>非常非常省心省力的一个快捷键，可以重命名你的类、方法、变量等等，而且这个重命名甚至可以选择替换掉注释中的内容</td>
+</tr>
+<tr>
+<td>ctrl+d</td>
+<td>复制当前行到下一行</td>
+</tr>
+<tr>
+<td>ctrl+x</td>
+<td>剪切当前行</td>
+</tr>
+<tr>
+<td>ctrl+c \ ctrl+v</td>
+<td>程序员第一大神器</td>
+</tr>
+<tr>
+<td>ctrl+z</td>
+<td>撤销</td>
+</tr>
+<tr>
+<td>ctrl+shift+z</td>
+<td>取消撤销</td>
+</tr>
+<tr>
+<td>ctrl+k</td>
+<td>提交代码到SVN</td>
+</tr>
+<tr>
+<td>ctrl+t</td>
+<td>更新代码</td>
+</tr>
+<tr>
+<td>alt+enter</td>
+<td>自动修复</td>
+</tr>
+<tr>
+<td>alt+insert</td>
+<td>可以自动生成构造器、getter/setter等等常用方法</td>
+</tr>
+<tr>
+<td>ctrl+alt+L</td>
+<td>格式化</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Java环境配置]]></title>
         <id>https://mason-xu.github.io/post/java-huan-jing-pei-zhi</id>
         <link href="https://mason-xu.github.io/post/java-huan-jing-pei-zhi">
         </link>
         <updated>2020-02-13T16:52:53.000Z</updated>
         <content type="html"><![CDATA[<!-- more -->
-<p>📚 JAVA_HOME<br>
-💡 jdk<br>
-📚 CLASSPATH<br>
-💡lib<br>
-📚 PATH<br>
-💡 bin<br>
-<img src="https://mason-xu.github.io//post-images/1581613189485.png" alt="" loading="lazy"></p>
+<figure data-type="image" tabindex="1"><img src="https://mason-xu.github.io//post-images/1581613189485.png" alt="" loading="lazy"></figure>
+<p>| JAVA_HOME | JDK |<br>
+| CLASSPATH  | lib |<br>
+| PATH  | bin |</p>
 ]]></content>
     </entry>
     <entry>
