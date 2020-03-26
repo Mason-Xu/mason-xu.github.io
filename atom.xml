@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mason-xu.github.io/</id>
     <title>Ma5on的Blog</title>
-    <updated>2020-03-17T11:29:29.062Z</updated>
+    <updated>2020-03-26T06:28:40.465Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mason-xu.github.io/"/>
     <link rel="self" href="https://mason-xu.github.io/atom.xml"/>
@@ -10,6 +10,46 @@
     <logo>https://mason-xu.github.io/images/avatar.png</logo>
     <icon>https://mason-xu.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Ma5on的Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[电脑和安卓手机使用SMB局域网快速互传文件,在线观看视频]]></title>
+        <id>https://mason-xu.github.io/post/dian-nao-he-an-zhuo-shou-ji-shi-yong-smb-ju-yu-wang-kuai-su-hu-chuan-wen-jian-zai-xian-guan-kan-shi-pin</id>
+        <link href="https://mason-xu.github.io/post/dian-nao-he-an-zhuo-shou-ji-shi-yong-smb-ju-yu-wang-kuai-su-hu-chuan-wen-jian-zai-xian-guan-kan-shi-pin">
+        </link>
+        <updated>2020-03-26T04:40:23.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="1在电脑新建一个文件夹">1.在电脑新建一个文件夹</h2>
+<figure data-type="image" tabindex="1"><img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-3/SMB1.png?raw=true" alt="" loading="lazy"></figure>
+<h2 id="2文件夹属性设置共享-高级共享">2.文件夹属性设置共享. 高级共享</h2>
+<figure data-type="image" tabindex="2"><img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-3/SMB2.png?raw=true" alt="" loading="lazy"></figure>
+<h2 id="3添加一个用户设置权限">3.添加一个用户,设置权限</h2>
+<p><img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-3/SMB3.png?raw=true" alt="" loading="lazy"><br>
+<img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-3/SMB4.png?raw=true" alt="" loading="lazy"></p>
+<h2 id="4回到共享页面">4.回到共享页面</h2>
+<figure data-type="image" tabindex="3"><img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-3/SMB5.png?raw=true" alt="" loading="lazy"></figure>
+<h2 id="5创建新用户">5.创建新用户</h2>
+<figure data-type="image" tabindex="4"><img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-3/SMB6.png?raw=true" alt="" loading="lazy"></figure>
+<h2 id="6控制面板添加其他账户">6.控制面板添加其他账户</h2>
+<p><img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-3/SMB7.png?raw=true" alt="" loading="lazy"><br>
+<img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-3/SMB8.png?raw=true" alt="" loading="lazy"><br>
+<img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-3/SMB9.png?raw=true" alt="" loading="lazy"></p>
+<h2 id="7选择新创建的用户">7.选择新创建的用户</h2>
+<figure data-type="image" tabindex="5"><img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-3/SMB10.png?raw=true" alt="" loading="lazy"></figure>
+<h2 id="8设置新用户的权限">8.设置新用户的权限</h2>
+<figure data-type="image" tabindex="6"><img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-3/SMB11.png?raw=true" alt="" loading="lazy"></figure>
+<h2 id="9获取本机ip地址">9.获取本机ip地址</h2>
+<figure data-type="image" tabindex="7"><img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-3/SMB12.png?raw=true" alt="" loading="lazy"></figure>
+<h2 id="10小米文件管理app连接smb">10.小米文件管理APP连接SMB</h2>
+<figure data-type="image" tabindex="8"><img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-3/SMB13.png?raw=true" alt="" loading="lazy"></figure>
+<h2 id="11mxplayer连接smb-在线看视频">11.MXplayer连接SMB 在线看视频</h2>
+<figure data-type="image" tabindex="9"><img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-3/SMB14.png?raw=true" alt="" loading="lazy"></figure>
+<iframe 
+    width="800" 
+    height="450" 
+    src="https://www.bilibili.com/video/BV1c7411m71U/"
+    frameborder="0" 
+    allowfullscreen>
+</iframe>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[IDEA的Mysql数据库设置]]></title>
         <id>https://mason-xu.github.io/post/idea-de-mysql-shu-ju-ku-she-zhi</id>
