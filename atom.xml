@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mason-xu.github.io/</id>
     <title>Ma5on的Blog</title>
-    <updated>2020-03-26T06:29:44.775Z</updated>
+    <updated>2020-03-26T06:33:28.332Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mason-xu.github.io/"/>
     <link rel="self" href="https://mason-xu.github.io/atom.xml"/>
@@ -42,8 +42,8 @@
 <h2 id="11mxplayer连接smb-在线看视频">11.MXplayer连接SMB 在线看视频</h2>
 <figure data-type="image" tabindex="9"><img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-3/SMB14.png?raw=true" alt="" loading="lazy"></figure>
 <iframe 
-    width="800" 
-    height="450" 
+    width="1080" 
+    height="720" 
     src="https://www.bilibili.com/video/BV1c7411m71U/"
     frameborder="0" 
     allowfullscreen>
