@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mason-xu.github.io/</id>
     <title>Ma5on的Blog</title>
-    <updated>2020-03-26T06:38:33.896Z</updated>
+    <updated>2020-04-12T03:38:46.607Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mason-xu.github.io/"/>
     <link rel="self" href="https://mason-xu.github.io/atom.xml"/>
@@ -10,6 +10,18 @@
     <logo>https://mason-xu.github.io/images/avatar.png</logo>
     <icon>https://mason-xu.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Ma5on的Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[HTML JSP文件里 Id 和 Class 选择器的使用]]></title>
+        <id>https://mason-xu.github.io/post/html-jsp-wen-jian-li-id-he-class-xuan-ze-qi-de-shi-yong</id>
+        <link href="https://mason-xu.github.io/post/html-jsp-wen-jian-li-id-he-class-xuan-ze-qi-de-shi-yong">
+        </link>
+        <updated>2020-04-12T03:23:08.000Z</updated>
+        <content type="html"><![CDATA[<p>简单点来说就是<br>
+id给js用<br>
+class用在css<br>
+<img src="https://mason-xu.github.io//post-images/1586662716064.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[电脑和安卓手机使用SMB局域网快速互传文件,在线观看视频]]></title>
         <id>https://mason-xu.github.io/post/dian-nao-he-an-zhuo-shou-ji-shi-yong-smb-ju-yu-wang-kuai-su-hu-chuan-wen-jian-zai-xian-guan-kan-shi-pin</id>
