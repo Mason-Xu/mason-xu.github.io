@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <title>Ma5on的Blog</title>
@@ -24,6 +24,12 @@
 
 <!-- Comment -->
 
+    
+        <link href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css" rel="stylesheet">
+    
+
+    
+
 
 
 <!-- katex -->
@@ -35,7 +41,7 @@
 
 </head>
 <body>
-<div id="fh5co-offcanvas">
+    <div id="fh5co-offcanvas">
     <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
         <span><i class="icon-cross3"></i> <span>Close</span></span>
     </a>
@@ -155,59 +161,157 @@
 </header>
 
 
-<div class="container-fluid">
+    <!--  <a href="#" class="fh5co-post-prev"><span>👈 Prev</span></a>-->
+    <!--  <a href="#" class="fh5co-post-next"><span>Next 👉</span></a>-->
 
-  <div class="col-lg-12 col-md-12 text-center tag-title">
-      <i class="fa fa-tag"></i> 标签: <h3>Mysql</h3>
-  </div>
-
-  <div class="row fh5co-post-entry">
-
+    <!-- 等gridea出自定义页面功能再优化一下 -->
     
-      <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box" style="height: 25em;">
-        <figure class="img-box">
-          <a href="https://mason-xu.github.io/post/idea-de-mysql-shu-ju-ku-she-zhi">
+        <div class="container-fluid">
+    <div class="row fh5co-post-entry single-entry">
+        <article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+            <figure class="animate-box">
+                
+                    <img src="https://mason-xu.github.io//post-images/git-he-github-de-shi-yong-zha-ji.jpg" alt=" Git 和 Github的使用札记" class="img-responsive">
+                
+            </figure>
+            <span class="fh5co-meta animate-box">
+                
+                    <div class="tag-container">
+                        
+                            <a href="https://mason-xu.github.io/tag/u5fMkb5HI" class="tag">github, </a>
+                        
+                            <a href="https://mason-xu.github.io/tag/8vidimCp7I" class="tag">git, </a>
+                        
+                    </div>
+                
+            </span>
+            <h2 class="fh5co-article-title animate-box"> Git 和 Github的使用札记</h2>
+            <ol class="breadcrumb fh5co-meta fh5co-date animate-box" style="margin-bottom:0; background-color:#f8f9fa">
+                <li>2018-01-04</li>
+                <li>228字</li>
+                <li>2 min read</li>
+            </ol>
+
+            <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
+                <div class="row">
+                    <div class="col-md-12 animate-box post-content">
+                        <p> <h2 id="git">git</h2>
+<pre><code class="language-git">git init   // 创建本地仓库
+git status // 掌握仓库当前的状态
+git add    // 添加修改文件到stage
+git commit -m&quot;text&quot;// 提交文件到Git仓库
+</code></pre>
+<h2 id="github">github</h2>
+<pre><code class="language-git">git remote add origin git@github.com:username/repository.git  // 让本地仓库与远程仓库连接
+git clone  git@github.com:username/repository.git  // 从远程仓库clone
+git push -u origin master // 推送本地仓库文件到远程仓库
+git push -f origin master // 强制推送
+</code></pre>
+<h2 id="连接多个远程仓库">连接多个远程仓库</h2>
+<pre><code class="language-git">git remote -v  // 查看目前远程库信息
+git remote rm origin // 删除远程库
+
+git remote add github git@github.com:username/repository.git  // 关联github
+git remote add gitee git@github.com:username/repository.git  // 关联gitee
+
+//推送
+git push github master
+git push gitee master
+</code></pre>
+<h2 id="自定义-git">自定义 git</h2>
+<pre><code>.gitignore  // 配置.gitignore 忽略特殊文件
+
+//设置别名
+$ git config --global alias.st status
+$ git config --global alias.co checkout
+$ git config --global alias.ci commit
+$ git config --global alias.br branch
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>🎄</th>
+<th>🎋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>作者</td>
+<td>Ma5on</td>
+</tr>
+<tr>
+<td>时间</td>
+<td>2018年1月4日</td>
+</tr>
+<tr>
+<td>标签</td>
+<td>Git ; Github ;</td>
+</tr>
+</tbody>
+</table>
+ </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 animate-box">
+                        
+                    </div>
+                </div>
+
+                <div class="row">
+    <div class="col-md-12 animate-box">
+        
             
-              <img data-original="https://mason-xu.github.io//post-images/idea-de-mysql-shu-ju-ku-she-zhi.png" alt="IDEA的Mysql数据库设置" class="img-responsive img-rounded lazy">
+                <div id="gitalk-container"></div>
             
-          </a>
-        </figure>
-        <span class="fh5co-meta">
-          
-            <div class="tag-container">
-              
-                <a href="https://mason-xu.github.io/tag/Ic4qoc1Bl" class="tag">IDEA, </a>
-              
-                <a href="https://mason-xu.github.io/tag/eCQIWeLJhj" class="tag">Mysql, </a>
-              
-                <a href="https://mason-xu.github.io/tag/qAT4ZcVk3" class="tag">基础, </a>
-              
+
+            
+        
+    </div>
+</div>
+
             </div>
-          
-        </span>
-        <h3 class="fh5co-article-title">
-          <a href="https://mason-xu.github.io/post/idea-de-mysql-shu-ju-ku-she-zhi">IDEA的Mysql数据库设置</a>
-        </h3>
-        <span class="fh5co-meta fh5co-date">2020-03-17</span>
-      </article>
-    
-    <div class="clearfix visible-lg-block visible-md-block visible-sm-block visible-xs-block"></div>
 
-  </div>
+        </article>
+    </div>
+</div>
 
-  <div class="pagination-box animate-box">
     
+
+    <!-- 返回顶部 -->
+    <div class="back-to-top">
     
-  </div>
+        <a href="#!" id="tool-toc" class="hidden-xs hidden-sm">
+            <i class="fa fa-map"></i>
+        </a>
+        <br>
+    
+    <a href="#top" class="hidden-xs hidden-sm"><i class="fa fa-paper-plane"></i></a>
+</div>
+
+<div class="post-toc animated fadeInRight hidden-xs hidden-sm" style="display: none;">
+    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#git">git</a></li>
+<li><a href="#github">github</a></li>
+<li><a href="#%E8%BF%9E%E6%8E%A5%E5%A4%9A%E4%B8%AA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93">连接多个远程仓库</a></li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89-git">自定义 git</a></li>
+</ul>
+</li>
+</ul>
+
 </div>
 
 
+    
 <footer id="fh5co-footer">
   <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
 </footer>
 
 
-<!-- jQuery -->
+    <!-- jQuery -->
 <script src="https://mason-xu.github.io//media/scripts/jquery.min.js"></script>
 <!-- img lazy load -->
 <script src="https://mason-xu.github.io//media/scripts/jquery.lazyload.min.js"></script>
@@ -256,6 +360,29 @@
         });
     
 </script>
+
+
+
+    
+        <script src="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+        <script>
+
+            var gitalk = new Gitalk({
+                clientID: '1bd0322293e29adb6cfa',
+                clientSecret: 'f632a3aa850787623581439514f0357727f65311',
+                repo: 'Mason-Xu.github.io',
+                owner: 'Mason-Xu',
+                admin: ['Mason-Xu'],
+                id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+                distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+
+            gitalk.render('gitalk-container')
+
+        </script>
+    
+
+    
 
 
 
