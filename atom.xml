@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mason-xu.github.io/</id>
     <title>Ma5on的Blog</title>
-    <updated>2020-05-01T10:56:50.763Z</updated>
+    <updated>2020-05-01T11:02:15.830Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mason-xu.github.io/"/>
     <link rel="self" href="https://mason-xu.github.io/atom.xml"/>
@@ -10,6 +10,44 @@
     <logo>https://mason-xu.github.io/images/avatar.png</logo>
     <icon>https://mason-xu.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Ma5on的Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[如何做到沉浸式状态栏---更加准确的说是透明状态栏 Translucent Bar  ]]></title>
+        <id>https://mason-xu.github.io/post/ru-he-zuo-dao-chen-jin-shi-zhuang-tai-lan-geng-jia-zhun-que-de-shuo-shi-tou-ming-zhuang-tai-lan-translucent-bar</id>
+        <link href="https://mason-xu.github.io/post/ru-he-zuo-dao-chen-jin-shi-zhuang-tai-lan-geng-jia-zhun-que-de-shuo-shi-tou-ming-zhuang-tai-lan-translucent-bar">
+        </link>
+        <updated>2020-05-01T10:59:18.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="1设置imageview图片-高宽-match_parent-但是没有隐藏actionbar">1.设置imageView图片 高宽 match_parent  但是没有隐藏ActionBar</h2>
+<h2 id="2透明状态栏和隐藏actionbar">2.透明状态栏和隐藏ActionBar</h2>
+<ul>
+<li>在activity文件中添加</li>
+</ul>
+<pre><code class="language-java">// 显示activity_main布局
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+
+//透明状态栏
+if (Build.VERSION.SDK_INT &gt;= 21) {
+    View decorView = getWindow().getDecorView();
+    int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+    decorView.setSystemUiVisibility(option);
+    getWindow().setStatusBarColor(Color.TRANSPARENT);
+}
+
+// 隐藏系统自带应用栏
+ActionBar actionBar = getSupportActionBar();
+actionBar.hide();
+</code></pre>
+<ol>
+<li>这种效果只有5.0及以上系统支持</li>
+<li>使用了SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN和SYSTEM_UI_FLAG_LAYOUT_STABLE，注意两个Flag必须要结合在一起使用，表示会让应用的主体内容占用系统状态栏的空间</li>
+<li>最后再调用Window的setStatusBarColor()方法将状态栏设置成透明色就可以了。</li>
+</ol>
+<blockquote>
+<p>需要注意的是，这一种变成透明状态栏的方法要注意你设置的自定义的ActionBar(一般为56dp)的高度要加上状态栏的高度（一般为20dp)</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[浏览器从服务器或客户端获取内容]]></title>
         <id>https://mason-xu.github.io/post/liu-lan-qi-cong-fu-wu-qi-huo-ke-hu-duan-huo-qu-nei-rong</id>
@@ -304,68 +342,6 @@ Test 2020年情人节</p>
 <p>未来，它一定会成为你离不开的伙伴</p>
 <p>尽情发挥你的才华吧！</p>
 <p>😘 Enjoy~</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ Git 和 Github的使用札记]]></title>
-        <id>https://mason-xu.github.io/post/git-he-github-de-shi-yong-zha-ji</id>
-        <link href="https://mason-xu.github.io/post/git-he-github-de-shi-yong-zha-ji">
-        </link>
-        <updated>2018-01-04T10:53:20.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="git">git</h2>
-<pre><code class="language-git">git init   // 创建本地仓库
-git status // 掌握仓库当前的状态
-git add    // 添加修改文件到stage
-git commit -m&quot;text&quot;// 提交文件到Git仓库
-</code></pre>
-<h2 id="github">github</h2>
-<pre><code class="language-git">git remote add origin git@github.com:username/repository.git  // 让本地仓库与远程仓库连接
-git clone  git@github.com:username/repository.git  // 从远程仓库clone
-git push -u origin master // 推送本地仓库文件到远程仓库
-git push -f origin master // 强制推送
-</code></pre>
-<h2 id="连接多个远程仓库">连接多个远程仓库</h2>
-<pre><code class="language-git">git remote -v  // 查看目前远程库信息
-git remote rm origin // 删除远程库
-
-git remote add github git@github.com:username/repository.git  // 关联github
-git remote add gitee git@github.com:username/repository.git  // 关联gitee
-
-//推送
-git push github master
-git push gitee master
-</code></pre>
-<h2 id="自定义-git">自定义 git</h2>
-<pre><code>.gitignore  // 配置.gitignore 忽略特殊文件
-
-//设置别名
-$ git config --global alias.st status
-$ git config --global alias.co checkout
-$ git config --global alias.ci commit
-$ git config --global alias.br branch
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>🎄</th>
-<th>🎋</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>作者</td>
-<td>Ma5on</td>
-</tr>
-<tr>
-<td>时间</td>
-<td>2018年1月4日</td>
-</tr>
-<tr>
-<td>标签</td>
-<td>Git ; Github ;</td>
-</tr>
-</tbody>
-</table>
 ]]></content>
     </entry>
 </feed>
