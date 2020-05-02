@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mason-xu.github.io/</id>
     <title>Ma5on的Blog</title>
-    <updated>2020-05-02T10:42:11.881Z</updated>
+    <updated>2020-05-02T11:05:10.834Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mason-xu.github.io/"/>
     <link rel="self" href="https://mason-xu.github.io/atom.xml"/>
@@ -10,6 +10,54 @@
     <logo>https://mason-xu.github.io/images/avatar.png</logo>
     <icon>https://mason-xu.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Ma5on的Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[SpringBoot项目支持JSP]]></title>
+        <id>https://mason-xu.github.io/post/springboot-xiang-mu-zhi-chi-jsp</id>
+        <link href="https://mason-xu.github.io/post/springboot-xiang-mu-zhi-chi-jsp">
+        </link>
+        <updated>2020-05-02T10:42:18.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>SpringBoot项目文件pom.xml添加依赖</li>
+</ol>
+<pre><code class="language-xml">&lt;!-- 引入jsp对 servlet的支持--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+            &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+&lt;!-- 添加JSTL maven,需要jtsl标签处理页面逻辑--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+            &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+&lt;!-- 添加JSP maven依赖--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.tomcat.embed&lt;/groupId&gt;
+            &lt;artifactId&gt;tomcat-embed-jasper&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+</code></pre>
+<ol start="2">
+<li>
+<p>添加好后会出现红色错误 , 需要maven Reimport<br>
+<img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-5/SpringbootMaven1.png?raw=true" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>修改resources下的application.properties,让springmvc支出视图的跳转目录指向为/main/webapp/jsp</p>
+</li>
+</ol>
+<pre><code>spring.mvc.view.prefix=/WEB-INF/jsp/
+spring.mvc.view.suffix=.jsp
+</code></pre>
+<ol start="4">
+<li>
+<p>修改controlller类 , @Controller , 根据application.properties中的视图重定向 , 返回jsp文件名</p>
+</li>
+<li>
+<p>在main/webapp/WEB-INF/jsp 目录下新建jsp文件<br>
+<img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-5/SpringbootMaven2.png?raw=true" alt="" loading="lazy"></p>
+</li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[如何做到沉浸式状态栏---更加准确的说是透明状态栏 Translucent Bar  ]]></title>
         <id>https://mason-xu.github.io/post/ru-he-zuo-dao-chen-jin-shi-zhuang-tai-lan-geng-jia-zhun-que-de-shuo-shi-tou-ming-zhuang-tai-lan-translucent-bar</id>
@@ -308,68 +356,6 @@ categories: [video]</p>
 <p>| JAVA_HOME | JDK |<br>
 | CLASSPATH  | lib |<br>
 | PATH  | bin |</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ Git 和 Github的使用札记]]></title>
-        <id>https://mason-xu.github.io/post/git-he-github-de-shi-yong-zha-ji</id>
-        <link href="https://mason-xu.github.io/post/git-he-github-de-shi-yong-zha-ji">
-        </link>
-        <updated>2018-01-04T10:53:20.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="git">git</h2>
-<pre><code class="language-git">git init   // 创建本地仓库
-git status // 掌握仓库当前的状态
-git add    // 添加修改文件到stage
-git commit -m&quot;text&quot;// 提交文件到Git仓库
-</code></pre>
-<h2 id="github">github</h2>
-<pre><code class="language-git">git remote add origin git@github.com:username/repository.git  // 让本地仓库与远程仓库连接
-git clone  git@github.com:username/repository.git  // 从远程仓库clone
-git push -u origin master // 推送本地仓库文件到远程仓库
-git push -f origin master // 强制推送
-</code></pre>
-<h2 id="连接多个远程仓库">连接多个远程仓库</h2>
-<pre><code class="language-git">git remote -v  // 查看目前远程库信息
-git remote rm origin // 删除远程库
-
-git remote add github git@github.com:username/repository.git  // 关联github
-git remote add gitee git@github.com:username/repository.git  // 关联gitee
-
-//推送
-git push github master
-git push gitee master
-</code></pre>
-<h2 id="自定义-git">自定义 git</h2>
-<pre><code>.gitignore  // 配置.gitignore 忽略特殊文件
-
-//设置别名
-$ git config --global alias.st status
-$ git config --global alias.co checkout
-$ git config --global alias.ci commit
-$ git config --global alias.br branch
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>🎄</th>
-<th>🎋</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>作者</td>
-<td>Ma5on</td>
-</tr>
-<tr>
-<td>时间</td>
-<td>2018年1月4日</td>
-</tr>
-<tr>
-<td>标签</td>
-<td>Git ; Github ;</td>
-</tr>
-</tbody>
-</table>
 ]]></content>
     </entry>
 </feed>
