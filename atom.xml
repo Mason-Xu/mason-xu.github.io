@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mason-xu.github.io/</id>
     <title>Ma5on的Blog</title>
-    <updated>2020-05-02T11:05:10.834Z</updated>
+    <updated>2020-05-09T16:40:17.328Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mason-xu.github.io/"/>
     <link rel="self" href="https://mason-xu.github.io/atom.xml"/>
@@ -10,6 +10,42 @@
     <logo>https://mason-xu.github.io/images/avatar.png</logo>
     <icon>https://mason-xu.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Ma5on的Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Shiro 获取securityManager 过期方法更新]]></title>
+        <id>https://mason-xu.github.io/post/shiro-huo-qu-securitymanager-guo-qi-fang-fa-geng-xin</id>
+        <link href="https://mason-xu.github.io/post/shiro-huo-qu-securitymanager-guo-qi-fang-fa-geng-xin">
+        </link>
+        <updated>2020-05-09T16:09:07.000Z</updated>
+        <content type="html"><![CDATA[<p><s>过期方法， Factory<SecurityManager> factory = new IniSecurityManagerFactory已废除</s></p>
+<pre><code class="language-java">private static Subject getSubject(User user) {
+        //加载配置文件，并获取工厂
+        Factory&lt;SecurityManager&gt; factory = new IniSecurityManagerFactory(&quot;classpath:shiro.ini&quot;);
+        //获取安全管理者实例
+        SecurityManager sm = factory.getInstance();
+        //将安全管理者放入全局对象
+        SecurityUtils.setSecurityManager(sm);
+        //全局对象通过安全管理者生成Subject对象
+        Subject subject = SecurityUtils.getSubject();
+
+        return subject;
+    }
+</code></pre>
+<p>更新方法</p>
+<pre><code class="language-java">private static Subject getSubject(User user) {
+        //获取安全管理者实例,获取本地资源文件,设置realm为本地的资源文件
+        DefaultSecurityManager defaultSecurityManager = new DefaultSecurityManager();
+        IniRealm iniRealm = new IniRealm(&quot;classpath:shiro.ini&quot;);
+        defaultSecurityManager.setRealm(iniRealm);
+        //将安全管理者放入全局对象
+        SecurityUtils.setSecurityManager(defaultSecurityManager);
+        //全局对象通过安全管理者生成Subject对象
+        Subject subject = SecurityUtils.getSubject();
+
+        return subject;
+    }
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[SpringBoot项目支持JSP]]></title>
         <id>https://mason-xu.github.io/post/springboot-xiang-mu-zhi-chi-jsp</id>
@@ -343,19 +379,6 @@ categories: [video]</p>
 </tr>
 </tbody>
 </table>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Java环境配置]]></title>
-        <id>https://mason-xu.github.io/post/java-huan-jing-pei-zhi</id>
-        <link href="https://mason-xu.github.io/post/java-huan-jing-pei-zhi">
-        </link>
-        <updated>2020-02-13T16:52:53.000Z</updated>
-        <content type="html"><![CDATA[<!-- more -->
-<figure data-type="image" tabindex="1"><img src="https://mason-xu.github.io//post-images/1581613189485.png" alt="" loading="lazy"></figure>
-<p>| JAVA_HOME | JDK |<br>
-| CLASSPATH  | lib |<br>
-| PATH  | bin |</p>
 ]]></content>
     </entry>
 </feed>
