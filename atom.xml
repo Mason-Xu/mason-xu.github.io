@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mason-xu.github.io/</id>
     <title>Ma5on的Blog</title>
-    <updated>2020-05-09T16:40:17.328Z</updated>
+    <updated>2020-07-15T23:32:38.513Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mason-xu.github.io/"/>
     <link rel="self" href="https://mason-xu.github.io/atom.xml"/>
@@ -10,6 +10,115 @@
     <logo>https://mason-xu.github.io/images/avatar.png</logo>
     <icon>https://mason-xu.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Ma5on的Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[SpringBoot使用Swagger]]></title>
+        <id>https://mason-xu.github.io/post/springboot-shi-yong-swagger</id>
+        <link href="https://mason-xu.github.io/post/springboot-shi-yong-swagger">
+        </link>
+        <updated>2020-07-15T23:31:25.000Z</updated>
+        <content type="html"><![CDATA[<p>添加依赖</p>
+<pre><code class="language-xml">		&lt;!--swagger2 ui--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+            &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;
+            &lt;version&gt;${springfox-swagger2.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+            &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;
+            &lt;version&gt;${springfox-swagger-ui.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+</code></pre>
+<p>版本</p>
+<pre><code class="language-xml">	&lt;properties&gt;
+        &lt;springfox-swagger2.version&gt;2.6.1&lt;/springfox-swagger2.version&gt;
+        &lt;springfox-swagger-ui.version&gt;2.6.1&lt;/springfox-swagger-ui.version&gt;
+    &lt;/properties&gt;
+</code></pre>
+<p>Swagger配置swaggerConfig</p>
+<pre><code class="language-java">import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@Configuration //说明这是一个配置类
+@EnableSwagger2 // 该注解开启Swagger2的自动配置,这个注解也可以注解在SpringbootApplication中
+public class swaggerConfig extends WebMvcConfigurerAdapter {
+    @Bean
+    public Docket createDocket() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
+                .groupName(&quot;admin&quot;)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage(&quot;com.example.controller&quot;)) // 注意修改此处的包名
+                .paths(PathSelectors.any())
+                .build();
+    }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title(&quot;项目名称&quot;)
+                .description(&quot;API接口&quot;)
+//                .termsOfServiceUrl(&quot;http://www.intetex.com/&quot;)
+                .version(&quot;1.1.0&quot;)
+                .build();
+    }
+    //添加swagger-ui.html映射
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler(&quot;swagger-ui.html&quot;)
+                .addResourceLocations(&quot;classpath:/META-INF/resources/&quot;);
+
+        registry.addResourceHandler(&quot;/webjars/**&quot;)
+                .addResourceLocations(&quot;classpath:/META-INF/resources/webjars/&quot;);
+    }
+    //指定swagger-ui.html为index
+    @Override
+    public void addViewControllers( ViewControllerRegistry registry ) {
+        registry.addViewController( &quot;/&quot; ).setViewName( &quot;redirect:/swagger-ui.html&quot; );
+        registry.setOrder( Ordered.HIGHEST_PRECEDENCE );
+        super.addViewControllers( registry );
+    }
+}
+
+</code></pre>
+<p>Controller添加注解</p>
+<pre><code class="language-java">import com.mason.springboot.mapper.CategoryMapper;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+
+@RestController
+@Api(description = &quot;swagger测试&quot;) // 1.5版本后推荐使用tags,description已过时
+public class CategoryController {
+    @Autowired
+    CategoryMapper categoryMapper;
+
+    @GetMapping(&quot;/getCategoryList&quot;)
+    @ApiOperation(&quot;获取产品分类&quot;)
+    public String listCategory(){
+//        return categoryMapper.getList();
+        return &quot;产品分类&quot;;
+    }
+}
+
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://gitee.com/mason-xu/PicRepo/raw/master/2020-7/swagger.png" alt="效果" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Shiro 获取securityManager 过期方法更新]]></title>
         <id>https://mason-xu.github.io/post/shiro-huo-qu-securitymanager-guo-qi-fang-fa-geng-xin</id>
@@ -269,116 +378,6 @@ categories: [video]</p>
 3.下载后，将压缩包放到 C:\Users\用户名.gradle\wrapper\dists\gradle-x.x-all\xxxxxxxxxxxxxxx<br>
 <img src="https://github.com/Mason-Xu/PicRepo/blob/master/2020-3/android4.png?raw=true" alt="" loading="lazy"><br>
 4.重写启动Studio即可</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[IDEA的常用快捷键]]></title>
-        <id>https://mason-xu.github.io/post/idea-de-chang-yong-kuai-jie-jian</id>
-        <link href="https://mason-xu.github.io/post/idea-de-chang-yong-kuai-jie-jian">
-        </link>
-        <updated>2020-02-25T09:49:45.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="查找相关快捷键">查找相关快捷键</h2>
-<table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>对应操作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>双击shift</td>
-<td>在项目的所有目录查找，就是你想看到你不想看到的和你没想过你能看到的都给你找出来</td>
-</tr>
-<tr>
-<td>ctrl+f</td>
-<td>当前文件查找特定内容</td>
-</tr>
-<tr>
-<td>ctrl+shift+f</td>
-<td>当前项目查找包含特定内容的文件</td>
-</tr>
-<tr>
-<td>ctrl+n</td>
-<td>查找类</td>
-</tr>
-<tr>
-<td>ctrl+shift+n</td>
-<td>查找文件</td>
-</tr>
-<tr>
-<td>ctrl+e</td>
-<td>最近的文件</td>
-</tr>
-<tr>
-<td>alt+F7</td>
-<td>非常非常频繁使用的一个快捷键，可以帮你找到你的函数或者变量或者类的所有引用到的地方</td>
-</tr>
-</tbody>
-</table>
-<h2 id="编辑相关快捷键">编辑相关快捷键</h2>
-<table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>对应操作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>shift+enter</td>
-<td>另起一行</td>
-</tr>
-<tr>
-<td>ctrl+r</td>
-<td>当前文件替换特定内容</td>
-</tr>
-<tr>
-<td>shift+F6</td>
-<td>非常非常省心省力的一个快捷键，可以重命名你的类、方法、变量等等，而且这个重命名甚至可以选择替换掉注释中的内容</td>
-</tr>
-<tr>
-<td>ctrl+d</td>
-<td>复制当前行到下一行</td>
-</tr>
-<tr>
-<td>ctrl+x</td>
-<td>剪切当前行</td>
-</tr>
-<tr>
-<td>ctrl+c \ ctrl+v</td>
-<td>程序员第一大神器</td>
-</tr>
-<tr>
-<td>ctrl+z</td>
-<td>撤销</td>
-</tr>
-<tr>
-<td>ctrl+shift+z</td>
-<td>取消撤销</td>
-</tr>
-<tr>
-<td>ctrl+k</td>
-<td>提交代码到SVN</td>
-</tr>
-<tr>
-<td>ctrl+t</td>
-<td>更新代码</td>
-</tr>
-<tr>
-<td>alt+enter</td>
-<td>自动修复</td>
-</tr>
-<tr>
-<td>alt+insert</td>
-<td>可以自动生成构造器、getter/setter等等常用方法</td>
-</tr>
-<tr>
-<td>ctrl+alt+L</td>
-<td>格式化</td>
-</tr>
-</tbody>
-</table>
 ]]></content>
     </entry>
 </feed>
