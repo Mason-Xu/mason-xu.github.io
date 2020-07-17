@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mason-xu.github.io/</id>
     <title>Ma5on的Blog</title>
-    <updated>2020-07-15T23:33:12.883Z</updated>
+    <updated>2020-07-17T01:11:39.701Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mason-xu.github.io/"/>
     <link rel="self" href="https://mason-xu.github.io/atom.xml"/>
@@ -52,7 +52,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration //说明这是一个配置类
 @EnableSwagger2 // 该注解开启Swagger2的自动配置,这个注解也可以注解在SpringbootApplication中
-public class swaggerConfig extends WebMvcConfigurerAdapter {
+public class SwaggerConfig extends WebMvcConfigurerAdapter {
     @Bean
     public Docket createDocket() {
         return new Docket(DocumentationType.SWAGGER_2)

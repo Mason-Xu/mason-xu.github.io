@@ -225,7 +225,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration //说明这是一个配置类
 @EnableSwagger2 // 该注解开启Swagger2的自动配置,这个注解也可以注解在SpringbootApplication中
-public class swaggerConfig extends WebMvcConfigurerAdapter {
+public class SwaggerConfig extends WebMvcConfigurerAdapter {
     @Bean
     public Docket createDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
